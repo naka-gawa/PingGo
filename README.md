@@ -2,7 +2,11 @@
 
 ## Overview
 
-PingGo is a Go-lang implementation of the classic ping utility, created for educational purposes. This project aims to provide a hands-on experience in network programming and to explore the concurrency features of Go through the development of a familiar network diagnostic tool. PingGo seeks to replicate the basic functionality of the traditional ping command, making it an excellent starting point for those looking to understand the fundamentals of networking and Go programming.
+PingGo is a golang implementation of the ping utility, created for educational purposes. 
+
+This project aims to provide a hands-on experience in network programming and to explore the concurrency features of Go through the development of a familiar network diagnostic tool. 
+
+PingGo seeks to replicate the basic functionality of the traditional ping command, making it an excellent starting point for those looking to understand the fundamentals of networking and Go programming.
 
 ## Features
 
