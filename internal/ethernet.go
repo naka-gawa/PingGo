@@ -6,6 +6,11 @@ import (
 	"net"
 )
 
+/*
+| Destination MAC | Source MAC | EtherType | Payload       |
+------------------------------------------------------------
+| 6 bytes         | 6 bytes    | 2 bytes   | 46-1500 bytes |
+*/
 type EthernetFrame struct {
 	DestinationMAC net.HardwareAddr
 	SourceMAC      net.HardwareAddr
@@ -25,12 +30,6 @@ func (ef *EthernetFrame) MarshalBinary() ([]byte, error) {
 	  buf is a byte slice with a length of 14 bytes
 	*/
 	buf := make([]byte, 14+len(ef.Payload))
-
-	/*
-		| Destination MAC | Source MAC | EtherType | Payload       |
-		------------------------------------------------------------
-		| 6 bytes         | 6 bytes    | 2 bytes   | 46-1500 bytes |
-	*/
 	copy(buf[0:6], ef.DestinationMAC)
 	copy(buf[6:12], ef.SourceMAC)
 	binary.BigEndian.PutUint16(buf[12:14], ef.EtherType)
